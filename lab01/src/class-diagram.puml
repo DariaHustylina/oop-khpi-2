@@ -1,0 +1,30 @@
+@startuml
+class RepairItem {
+  -serialNumber : String
+  -isFixed : boolean
+  +RepairItem(serialNumber : String, isFixed : boolean)
+  +RepairItem(serialNumber : String)
+  +markAsFixed() : void
+}
+
+class Customer {
+  -customerId : String
+  -fullName : String
+  +Customer(customerId : String, fullName : String)
+}
+
+class ServiceOrder {
+  -orderId : String
+  -description : String
+  -status : String
+  -result : String
+  -customer : Customer
+  -item : RepairItem
+  +ServiceOrder(orderId : String, description : String, customer : Customer, item : RepairItem)
+  +startRepair() : void
+  +finishRepair() : void
+}
+
+ServiceOrder -- Customer : "?"
+ServiceOrder -- RepairItem : "?"
+@enduml
