@@ -1,0 +1,38 @@
+@startuml
+
+class Customer {
+- customerId: String
+- fullName: String
+- orders: List<ServiceOrder>
++ Customer(String, String)
++ addOrder(order: ServiceOrder): void
++ getOrders(): List<ServiceOrder>
++ toString(): String
+}
+
+class ServiceOrder {
+- orderId: String
+- description: String
+- status: String
+- customer: Customer
+- item: RepairItem
++ ServiceOrder(String, String, Customer, RepairItem)
++ startRepair(): void
++ finishRepair(): void
++ toString(): String
+}
+
+class RepairItem {
+- serialNumber: String
+- isFixed: boolean
++ RepairItem(String)
++ markAsFixed(): void
++ toString(): String
++ equals(Object): boolean
++ hashCode(): int
+}
+
+Customer "1" -- "0..*" ServiceOrder : створює
+ServiceOrder "1" -- "1" RepairItem : пов'язаний з
+
+@enduml

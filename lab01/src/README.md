@@ -106,7 +106,7 @@ toString()
 ## UML-діаграма
 ### UML-діаграма створена у форматі PlantUML та знаходиться у файлі:
 
-docs/lab01/class-diagram.puml
+docs/ua.khpi.oop.lab01.lab01/class-diagram.puml
 
 ![img.png](888/lab01/src/img.png)
 ### Зв’язки:
